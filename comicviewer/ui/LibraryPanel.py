@@ -62,6 +62,6 @@ class LibraryPanel(QtWidgets.QWidget):
 
 	def _onBookBrowseButtonPress(self):
 		fileFilter = "Comic Books (*" + " *".join(FileOpenerFactory.supportedExtensions) + ")"
-		path = QtWidgets.QFileDialog.getOpenFileName(self, "Load Comic Book", self.libaryPath, fileFilter)[0]  # 'getOpenFileName' returns a tuple, first entry is filepath, second entry is filter used
+		path = QtWidgets.QFileDialog.getOpenFileName(self, "Load Comic Book", SettingsStore.getSettingValue(SettingsEnum.LIBRARY_PATH), fileFilter)[0]  # 'getOpenFileName' returns a tuple, first entry is filepath, second entry is filter used
 		if path:
 			self.windowController.loadComicBook(path)
