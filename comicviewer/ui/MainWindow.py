@@ -19,6 +19,7 @@ class MainWindow(QtWidgets.QMainWindow):
 		self._initializeUI()
 		self.resize(1920, 1080)
 		self._centerWindowOnScreen()
+		self.showMaximized()
 		# Enable dropping files onto this application, to load comic books without having to navigate to them (see the 'dragEnterEvent' and 'dropEvent' methods)
 		self.setAcceptDrops(True)
 		# Listen for key presses
